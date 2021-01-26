@@ -8,9 +8,13 @@
 from bs4 import BeautifulSoup
 import re
 
-file = open("./baidu.html","rb")
+reName = re.compile("")
+
+file = open("./test.html","rb")
 html = file.read().decode("utf-8")
 bs = BeautifulSoup(html,"html.parser")
+print(bs.findAll('dd')[0].text)
+print(bs.findAll('dd')[6].find('a').get('href'))
 # print(bs.title)
 # print(bs.a)
 # print(bs.head)
@@ -72,6 +76,6 @@ bs = BeautifulSoup(html,"html.parser")
 # print(bs.select("#u1")) # 通过id查找
 # print(bs.select("a[class = 'bri']")) # 通过属性查找
 # print(bs.select("head > title")) # 通过子标签查找
-print(bs.select(".mnav ~ .bri")[0].get_text())
+# print(bs.select(".mnav ~ .bri")[0].get_text())
 
 
